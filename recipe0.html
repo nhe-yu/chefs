@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe0</title>
+    <link rel="stylesheet" href="recipe.css">
+    <script src="reviewf.js"></script>
 </head>
 <body>
     <header><!--content for header--></header>
@@ -20,6 +22,19 @@
     <h3>NUTRITION FACTS:</h3>
     <p>HDJ</p>
     <h2>REVIEWS</h2>
+    <form id="reviewForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" required></textarea><br><br>
+        
+        <input type="button" value="Submit" onclick="submitReview()">
+    </form>
+    
+    <div id="reviewList">
+        <!-- Reviews will be displayed -->
+    </div>
     <p>URY</p>
     <footer><!--content for footer--></footer>
 </body>
