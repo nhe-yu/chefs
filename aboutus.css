@@ -1,42 +1,35 @@
 * {box-sizing: border-box;}
 
-/* body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-} */
 .topnav img{
     float: left;
     margin-right: 20px;
 }
 img {
-    display: block; /* Remove any extra spacing around the image */
+    display: block; 
     max-width: 100%;
     height: auto;
 }
 .creator {
-    float: left; /* Float the container to the left */
-    width: 200px; /* Adjust width as needed */
+    float: left; 
+    width: 200px; 
     margin-right: 20px; 
 
 }
-.image2{
-  float: left;
-}
+
 .image-with-paragraph {
-    display: flex; /* Use flexbox to arrange content */
-    align-items: center; /* Center vertically within the container */
-    margin-bottom: 20px; /* Add spacing between sections */
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 20px; 
 }
 
-.image-with-paragraph p {
-    text-align: center;
-    margin-left: 30%;
-    margin-bottom: 50px;
-}
+ .image-with-paragraph p {
+margin-left: 50px;
+  margin-bottom: 50px;
+} 
 
 .image-container {
-    width: 150px; /* Adjust width as needed */
-    margin-right: 20px; /* Add space between image and paragraph */
+    width: 150px; 
+   margin-left: 50px;
 }
 button{
     width: 8%;
@@ -46,10 +39,15 @@ button{
 footer{
   text-align: center;
 }
+h3{
+  text-align: center;
+}
 p{
-    margin-top: 80px;
     text-align: center;
-    margin-right: 50px;
+  
+  }
+  .summary p{
+    text-align: center;
   }
   p img{
     float: left;
