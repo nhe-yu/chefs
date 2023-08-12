@@ -9,15 +9,21 @@
     margin-right: 20px;
 }
  img{
-  float: left;
+ padding: 10px;
 }
 .image {
+  float: left;
+}
+.image2{
   float: left;
 }
 button{
     width: 8%;
  border-radius: 20px;
 
+}
+footer{
+  text-align: center;
 }
 p{
   margin-top: 80px;
@@ -29,8 +35,11 @@ margin-top: 120px;
 text-align: center;
 margin-bottom: 30px;
 }
-a.img{
-/* margin: 5px; */
+img.recipe1{
+margin: 5px;
+}
+img.ansh{
+  padding: 50px;
 }
 
 button.submit{
