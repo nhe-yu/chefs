@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+    <title>Caesar Salad</title>
+    <link rel="stylesheet" href="recipe.css">
+    <link rel="stylesheet" href="PageFormat.css">
+    <script src="reviewf.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="navbar">
+                    
+                <div class="logo-container">
+                    <img src="https://img.freepik.com/premium-vector/chef-logo-vector_20448-270.jpg" alt="Logo" class="logo">
+                </div>
+
+                <div class="nav-container">
+                    <div class="search-container">
+                        <i class="material-icons search-icon">search</i>
+        
+                        <input 
+                            id='rInput' 
+                            onkeyup='searchTable()' 
+                            type='text' 
+                            placeholder="Search recipes..." 
+                            title="Type in a recipe, serving, caloric, or protein specifier"
+                            >
+                        </div>
+                        <div class="navbutton">
+                            <a class="navbutton" href="home.html">Home</a>
+                            <a class="navbutton" href="search.html">Recipe List</a>
+                            <a class="navbutton" href="aboutus.html">About Us</a>
+                        </div>
+                </div>
+            </div>
+            
+            <h1>Caesar Salad</h1>
+            <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2019/07/caulisoup_3-768x512.jpg" alt="Cauliflower and Walnut Soup">
+            <h3>COOKTIME:</h3>
+            <p> 20 minutes</p>
+            <h3>SEVINGS:</h3>
+            <p>7</p>
+            <h3>INGREDIENTS:</h3>
+            <p>
+                <ul>
+                <li>For salad
+
+                    6 large hearts of romaine, chopped
+                </li>
+                <li>For dressing
+
+                    1 cup white, cannellini, or Great Northern beans, drained and rinsed</li>
+                <li> ½ cup water</li>
+                <li>2 anchovies </li>
+                <li>4 Tbsp. fresh lemon juice</li>
+                <li>1 garlic clove</li>
+                <li>4 Tbsp. grated Parmesan</li>
+                <li>½ tsp. black pepper</li>
+                <li>½ cup extra virgin olive oil</li>
+                </ul>
+            </p>
+            <h3>PREPARATION:</h3>
+            <p>
+        <ol>
+            <li> Preheat the oven to 375 degrees Fahrenheit. In a medium-sized bowl, combine the olive oil and minced garlic. Add the cubed baguette and toss to coat. Spread the croutons on a baking sheet and bake for 5–8 minutes, or until crisp and golden brown.</li>
+            <li> Dressing: In the container of a food processor combine the beans, water, anchovy, lemon juice, garlic, Parmesan cheese, and black pepper. Process until smooth. With the motor running, slowly add the olive oil to create a creamy, emulsified dressing.</li>
+            <li> Chop heart of romaine. In a large mixing bowl combine the chopped lettuce and dressing, tossing well to ensure all of the lettuce is coated with the dressing.</li>
+            <li>To serve, divide the salad among six salad plates, and garnish each plate with croutons.</li>
+            </ol>
+            </p>
+            <h3>NUTRITION FACTS:</h3>
+            <p>375 calories, 11 g protein, 41 g carbohydrate, 11 g fiber, 3 g sugar (0 g added sugar), 447 mg sodium, 21 mg potassium, 18 g fat (3 g sat, 13 g mono, 2 g poly, 0 g trans), 1 mg cholesterol</p>
+            <h2>REVIEWS</h2>
+            <form id="reviewForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="comments">Comments:</label><br>
+                <textarea id="comments" name="comments" rows="4" cols="50" required></textarea><br><br>
+                
+                <input type="button" value="Submit" onclick="submitReview()">
+            </form>
+            
+            <div id="reviewList">
+                <!-- Reviews will be displayed -->
+            </div>
+            <footer><!--content for footer--></footer>
+        </div>
+        <div class="push"></div> <!-- Forces spacing -->
+            <div class="footer">
+                <p>&#169 Road To Code</p>
+            </div>
+    </div>
+</body>
+</html>
