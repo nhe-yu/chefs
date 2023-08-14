@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe2</title>
+    <link rel="stylesheet" href="recipe.css">
+    <script src="reviewf.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="navbar">
+                    
+                <div class="logo-container">
+                    <img src="https://img.freepik.com/premium-vector/chef-logo-vector_20448-270.jpg" alt="Logo" class="logo">
+                </div>
+
+                <div class="nav-container">
+                    <div class="search-container">
+                        <i class="material-icons search-icon">search</i>
+        
+                        <input 
+                            id='rInput' 
+                            onkeyup='searchTable()' 
+                            type='text' 
+                            placeholder="Search recipes..." 
+                            title="Type in a recipe, serving, caloric, or protein specifier"
+                            >
+                        </div>
+                        <div class="navbutton">
+                            <a class="navbutton" href="home.html">Home</a>
+                            <a class="navbutton" href="search.html">Recipe List</a>
+                            <a class="navbutton" href="aboutus.html">About Us</a>
+                        </div>
+                </div>
+            </div>
+            
+    <h1>Marinated Shiitake Mushroom and Cucumber Salad</h1>
+    <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2020/03/Shiitake3-768x512.jpg">
+    <h3>COOKTIME:</h3>
+    <p>34 minutes</p>
+    <h3>SEVINGS:</h3>
+    <p>3</p>
+    <h3>INGREDIENTS:</h3>
+    <p>
+        <ul>
+        <li>4 cups (about 4 ounces) dried shiitake mushrooms</li>
+        <li>1 cup reduced-sodium soy sauce</li>
+        <li> 3/4 cup sake or dry white wine</li>
+        <li> 1/4 cup white wine vinegar</li>
+        <li>1/4 cup honey</li>
+        <li>1 1-inch piece ginger, peeled</li>
+        </ul>
+    </p>
+    <h3>PREPARATION:</h3>
+    <p>
+<ol>
+    <li> For the Mushrooms: Bring 4 cups water to boil in large saucepan. Off heat, add mushrooms, cover, and let hydrate until mushrooms are softened and plump, 15 to 20 minutes. Strain mushrooms in fine-mesh strainer set over bowl; reserve liquid and set aside. Let mushrooms cool slightly, then cut into 1/4-inch slices. Add sliced mushrooms back to now-empty pot. Stir in 2 cups reserved cooking liquid, soy sauce, sake, vinegar, honey, and ginger until combined. Bring mixture to simmer over medium heat, reduce heat to low, and cook, stirring occasionally, until mushrooms absorb cooking liquid and turn brown, about 30 minutes. Off heat, cover pot and let mushrooms cool to room temperature.</li>
+    <li> For the Salad: Toss cucumbers with lemon juice in large bowl. Arrange cucumbers on large plate, then arrange mushrooms over top. Pour 1/2 cup cooking liquid over salad and sprinkle with sesame seeds. Drizzle with lemon juice and olive oil to taste. Serve.</li>
+    </ol>
+    </p>
+    <h3>NUTRITION FACTS:</h3>
+    <p>5 210 calories 5 grams of protein 36 grams of carbohydrates 3 grams of fiber 16 grams of sugar ( 14 grams of added sugar ) 927 milligrams of sodium 410 milligrams of potassium 3 grams of fat ( 2 grams of monounsaturated fat ) </p>
+    <h2>REVIEWS</h2>
+    <form id="reviewForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" required></textarea><br><br>
+        
+        <input type="button" value="Submit" onclick="submitReview()">
+    </form>
+    
+    <div id="reviewList">
+        <!-- Reviews will be displayed -->
+    </div>
+    <footer><!--content for footer--></footer>
+</body>
+</html>
