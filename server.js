@@ -54,3 +54,5 @@ app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
     readReviewsFromFile(); // Call readReviewsFromFile() here, after defining routes
 });
+
+//persistence appears to be an issue, reviews.json unable to be accessed. Furthermore, reviews arr correctly returns in console logs.
