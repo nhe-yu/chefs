@@ -1,11 +1,30 @@
-function submitReview() {
-    var name = document.getElementById("name").value;
-    var comments = document.getElementById("comments").value;
-    
-    var reviewList = document.getElementById("reviewList");
-    var reviewDiv = document.createElement("div");
-    reviewDiv.innerHTML = "<strong>" + name + ":</strong> " + comments + "<br><br>";
-    reviewList.appendChild(reviewDiv);
-    
-    document.getElementById("reviewForm").reset();
-}
+$(document).ready(function () {
+    const reviewList = $('#reviewList');
+    const reviewInput = $('#reviewInput');
+    const submitButton = $('#submitReview');
+
+    function loadReviews() {
+        // Fetch reviews from the server
+        $.get('/reviews', function (data) {
+            reviewList.empty();
+
+            for (const review of data) {
+                reviewList.append(`<li>${review}</li>`);
+            }
+        });
+    }
+
+    submitButton.click(function () {
+        const newReview = reviewInput.val();
+
+        if (newReview.trim() !== '') {
+            // Send the new review to the server
+            $.post('/reviews', { review: newReview }, function () {
+                reviewList.append(`<li>${newReview}</li>`);
+                reviewInput.val('');
+            });
+        }
+    });
+
+    loadReviews();
+});
