@@ -1,5 +1,7 @@
 * {box-sizing: border-box;}
-
+body{
+  background-color: rgb(255, 255, 255);
+}
 .topnav img{
     float: left;
     margin-right: 20px;
