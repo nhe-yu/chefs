@@ -1,76 +1,99 @@
 <html>
     <head>
         <title>Recipe Search</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
         <link href="search.css" rel="stylesheet">
+        <link href="PageFormat.css" rel="stylesheet">
         <script src="searchf.js"></script>
         <script src="sortf.js"></script>
     </head>
     <body>
+        <div class="wrapper">
 
-        <div class="container">
-            
-        <!--insert pageheader div-->
+            <div class="container">
 
-            <input 
-                id='rInput' 
-                onkeyup='searchTable()' 
-                type='text' 
-                placeholder="Search recipes..." 
-                title="Type in a recipe, serving, caloric, or protein specifier"
-                >
-            
-            <div class="center-table">
-                <table id="rTable">
-                    <tr id="rTableHeader">
-                        <th></th>
-                        <th onclick="sortTableByColumn(1)">Recipe</th>
-                        <th onclick="sortTableByColumn(2)">Servings</th>
-                        <th onclick="sortTableByColumn(3)">kcal</th>
-                        <th onclick="sortTableByColumn(4)">Proteins, g</th>
-                        <th onclick="sortTableByColumn(5)">Fat, g</th>
-                        <th onclick="sortTableByColumn(6)">Carbohydrates, g</th>
-                    </tr>
+                <div class="navbar">
                     
-                    <tr>
-                        <td id="imgColumn">
-                            <a href="https://www.hsph.harvard.edu/nutritionsource/cauliflower-walnut-soup/">
-                            <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2019/07/caulisoup_3-1200x800.jpg" style="width:200px;"></a>
-                        </td>
-                        <td id="recipeColumn"><a href="https://www.hsph.harvard.edu/nutritionsource/cauliflower-walnut-soup/">Cauliflower and Walnut Soup</a></td>
-                        <td>6</td>
-                        <td>244</td>
-                        <td>5</td>
-                        <td>23</td>
-                        <td>9</td>
-                    </tr>
+                    <div class="logo-container">
+                        <img src="https://img.freepik.com/premium-vector/chef-logo-vector_20448-270.jpg" alt="Logo" class="logo">
+                    </div>
 
-                    <tr>
-                        <td id="imgColumn">
-                            <a href="https://www.hsph.harvard.edu/nutritionsource/ruby-chard/">
-                            <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2018/07/red-chard-2392728_1280-768x512.jpg" style="width:200px;"></a>
-                        </td>
-                        <td id="recipeColumn"><a href="https://www.hsph.harvard.edu/nutritionsource/ruby-chard/">Ruby Chard Decorated with Itself</a></td>
-                        <td>4-6</td>
-                        <td>200</td>
-                        <td>4</td>
-                        <td>16</td>
-                        <td>10</td>
+                    <div class="nav-container">
+                        <div class="search-container">
+                            <i class="material-icons search-icon">search</i>
+            
+                            <input 
+                                id='rInput' 
+                                onkeyup='searchTable()' 
+                                type='text' 
+                                placeholder="Search recipes..." 
+                                title="Type in a recipe, serving, caloric, or protein specifier"
+                                >
+                            </div>
+                            <div class="navbutton">
+                                <a class="navbutton" href="home.html">Home</a>
+                                <a class="navbutton" href="search.html">Recipe List</a>
+                                <a class="navbutton" href="aboutus.html">About Us</a>
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="center-table">
+                    <table id="rTable">
+                        <tr id="rTableHeader">
+                            <th></th>
+                            <th onclick="sortTableByColumn(1)">Recipe</th>
+                            <th onclick="sortTableByColumn(2)">Servings</th>
+                            <th onclick="sortTableByColumn(3)">kcal</th>
+                            <th onclick="sortTableByColumn(4)">Proteins, g</th>
+                            <th onclick="sortTableByColumn(5)">Fat, g</th>
+                            <th onclick="sortTableByColumn(6)">Carbohydrates, g</th>
+                        </tr>
+                        
+                        <tr>
+                            <td id="imgColumn">
+                                <a href="https://www.hsph.harvard.edu/nutritionsource/cauliflower-walnut-soup/">
+                                <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2019/07/caulisoup_3-1200x800.jpg" style="width:200px;"></a>
+                            </td>
+                            <td id="recipeColumn"><a href="https://www.hsph.harvard.edu/nutritionsource/cauliflower-walnut-soup/">Cauliflower and Walnut Soup</a></td>
+                            <td>6</td>
+                            <td>244</td>
+                            <td>5</td>
+                            <td>23</td>
+                            <td>9</td>
                         </tr>
 
-                    <tr>
-                        <td>
-                            <a href="https://www.hsph.harvard.edu/nutritionsource/marinated-shiitake-mushroom-and-cucumber-salad/">
-                            <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2020/03/Shiitake3-1536x1024.jpg" style="width:200px;"></a>
-                        </td>
-                        <td id="recipeColumn"><a href="https://www.hsph.harvard.edu/nutritionsource/marinated-shiitake-mushroom-and-cucumber-salad/">Marinated Shiitake Mushroom and Cucumber Salad</a></td>
-                        <td>4-6</td>
-                        <td>210</td>
-                        <td>5</td>
-                        <td>3</td>
-                        <td>36</td>
-                    </tr>
-                </table>
+                        <tr>
+                            <td id="imgColumn">
+                                <a href="https://www.hsph.harvard.edu/nutritionsource/ruby-chard/">
+                                <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2018/07/red-chard-2392728_1280-768x512.jpg" style="width:200px;"></a>
+                            </td>
+                            <td id="recipeColumn"><a href="https://www.hsph.harvard.edu/nutritionsource/ruby-chard/">Ruby Chard Decorated with Itself</a></td>
+                            <td>4-6</td>
+                            <td>200</td>
+                            <td>4</td>
+                            <td>16</td>
+                            <td>10</td>
+                            </tr>
+
+                        <tr>
+                            <td>
+                                <a href="https://www.hsph.harvard.edu/nutritionsource/marinated-shiitake-mushroom-and-cucumber-salad/">
+                                <img src="https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2020/03/Shiitake3-1536x1024.jpg" style="width:200px;"></a>
+                            </td>
+                            <td id="recipeColumn"><a href="https://www.hsph.harvard.edu/nutritionsource/marinated-shiitake-mushroom-and-cucumber-salad/">Marinated Shiitake Mushroom and Cucumber Salad</a></td>
+                            <td>4-6</td>
+                            <td>210</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>36</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="push"></div> <!-- Forces spacing -->
+            <div class="footer">
+                <p>&#169 Road To Code</p>
             </div>
         </div>
     </body>
