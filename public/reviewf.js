@@ -1,30 +1,42 @@
 $(document).ready(function () {
-    const reviewList = $('#reviewList');
-    const reviewInput = $('#reviewInput');
-    const submitButton = $('#submitReview');
+    $('.comment-form').each(function () {
+        const commentForm = $(this);
+        const usernameInput = commentForm.find('.username');
+        const reviewInput = commentForm.find('.review');
+        const submitButton = commentForm.find('.submit');
+        const clearButton = commentForm.find('.clearReviews');
+        const commentList = commentForm.find('.comment-list');
 
-    function loadReviews() {
-        // Fetch reviews from the server
-        $.get('/reviews', function (data) {
-            reviewList.empty();
+        submitButton.click(function () {
+            const username = usernameInput.val();
+            const newReview = reviewInput.val();
 
-            for (const review of data) {
-                reviewList.append(`<li>${review}</li>`);
+            if (username.trim() !== '' && newReview.trim() !== '') {
+                console.log('Submitting review:', username, newReview); // Debug log username and review recieved
+                $.post('/reviews', { username: username, review: newReview }, function () {
+                    commentList.append(`<li>${username}: ${newReview}</li>`);
+                    usernameInput.val('');
+                    reviewInput.val('');
+                });
             }
         });
-    }
 
-    submitButton.click(function () {
-        const newReview = reviewInput.val();
+        clearButton.click(function () {
+            $.post('/clear-reviews', function () {
+                commentList.empty();
+            });
+        });
 
-        if (newReview.trim() !== '') {
-            // Send the new review to the server
-            $.post('/reviews', { review: newReview }, function () {
-                reviewList.append(`<li>${newReview}</li>`);
-                reviewInput.val('');
+        function loadReviews() {
+            console.log('Received reviews:', data); // Debug log review
+            $.get('/reviews', function (data) {
+                commentList.empty();
+                data.forEach(function (review) {
+                    commentList.append(`<li>${review.username}: ${review.review}</li>`);
+                });
             });
         }
-    });
 
-    loadReviews();
+        loadReviews();
+    });
 });
