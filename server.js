@@ -1,27 +1,32 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const fs = require("fs");
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser'); // Add this line
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = 3000;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
 
-app.get("/get-comments", function(req, res) {
-    const comments = JSON.parse(fs.readFileSync("comments.json", "utf-8"));
-    res.json({ comments });
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+const reviews = [];
+
+// GET route to fetch reviews
+app.get('/reviews', (req, res) => {
+    res.json(reviews);
 });
 
-app.post("/add-comment", function(req, res) {
-    const newComment = { name: req.body.name, comment: req.body.comment };
-    const comments = JSON.parse(fs.readFileSync("comments.json", "utf-8"));
-    comments.push(newComment);
-    fs.writeFileSync("comments.json", JSON.stringify(comments, null, 2));
-    res.json({ success: true });
+// POST route to add a new review
+app.post('/reviews', (req, res) => {
+    const newComment = req.body.review;
+    reviews.push(newComment);
+    res.sendStatus(201);
 });
 
-app.listen(PORT, function() {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
